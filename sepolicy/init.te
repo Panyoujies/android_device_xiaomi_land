@@ -1,0 +1,18 @@
+allow init adsprpcd_file:filesystem { relabelto relabelfrom mount };
+allow init misc_partition:blk_file w_file_perms; # Need to allow BCB writes
+allow init fpce_socket:sock_file { create setattr };
+allow init sysfs_fpc_dev:file relabelto;
+allow init camera_device:chr_file { write ioctl };
+allow init video_device:chr_file write;
+allow init fingerprintd_data_file:file rename;
+allow init sysfs_fpc_dev:file { open write read };
+allow init fpc_data_file:sock_file { unlink create };
+allow init tee_device:chr_file { ioctl write };
+allow init gx_fpd_device:chr_file ioctl;
+allow init video_device:chr_file ioctl;
+allow init property_socket:sock_file write;
+allow init servicemanager:binder call;
+allow init system_server:binder call;
+allow init mediaserver:fd use;
+allow init graphics_device:chr_file ioctl;
+allow init surfaceflinger:fd use;

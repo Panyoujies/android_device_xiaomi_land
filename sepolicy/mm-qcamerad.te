@@ -1,0 +1,4 @@
+allow mm-qcamerad graphics_device:dir search;
+allow mm-qcamerad graphics_device:chr_file rw_file_perms;
+allow mm-qcamerad device:chr_file { read write open ioctl };
+set_prop(mm-qcamerad, camera_prop)
