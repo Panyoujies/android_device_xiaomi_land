@@ -172,8 +172,9 @@ PRODUCT_PACKAGES += \
 
 # Etc
 PRODUCT_PACKAGES += \
-
-
+    init.qcom.bt.sh \
+    init.qcom.fm.sh \
+    init.qcom.post_boot.sh
 
 # Media profile
 PRODUCT_COPY_FILES += \
@@ -210,6 +211,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/lowi.conf:system/etc/lowi.conf \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/gps/xtwifi.conf:system/etc/xtwifi.conf
+
+# Sensors
+PRODUCT_PACKAGES += \
+    $(LOCAL_PATH)/sensors/hals.conf:system/etc/sensors/hals.conf
+
 # media
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
