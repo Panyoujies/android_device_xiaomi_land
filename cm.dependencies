@@ -1,8 +1,4 @@
 [
-    {
-     "repository": "android_external_stlport",
-     "target_path": "external/stlport"
-     },
   {
     "repository": "android_vendor_xiaomi_land",
     "target_path": "vendor/xiaomi/land"
