@@ -64,6 +64,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_USES_UNCOMPRESSED_KERNEL := false
 TARGET_COMPILE_WITH_MSM_KERNEL := true
+#TARGET_KERNEL_CONFIG := msm8937-perf_defconfig
+#TARGET_KERNEL_SOURCE := kernel/xiaomi/msm-3.18
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -177,24 +179,11 @@ TARGET_PER_MGR_ENABLED := true
 
 # Recovery
 RECOVERY_FSTAB_VERSION := 2
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
-#TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 BOARD_HAS_NO_SELECT_BUTTON := true
-
-# TWRP-Specific
-TW_THEME := portrait_hdpi
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_INCLUDE_CRYPTO := true
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-BOARD_SUPPRESS_SECURE_ERASE := true
-TW_TARGET_USES_QCOM_BSP := true
-TW_EXTRA_LANGUAGES := true
-TW_NEW_ION_HEAP := true
 
 #PCI RCS
 TARGET_USES_PCI_RCS := false
@@ -204,9 +193,6 @@ MALLOC_IMPL := dlmalloc
 # RIL
 TARGET_RIL_VARIANT := caf
 PROTOBUF_SUPPORTED := true
-
-#Add support for firmare upgrade on msm8937
-HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
 
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
@@ -229,9 +215,6 @@ TARGET_PROVIDES_WCNSS_QMI := true
 TARGET_USES_QCOM_WCNSS_QMI := true
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
-
-# Video
-TARGET_HAVE_SIGNED_VENUS_FW := true
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true

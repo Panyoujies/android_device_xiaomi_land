@@ -1,1 +1,2 @@
 add_lunch_combo cm_land-userdebug
+add_lunch_combo cm_land-eng

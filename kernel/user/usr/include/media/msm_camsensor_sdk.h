@@ -1,5 +1,7 @@
-#ifndef __LINUX_MSM_CAMSENSOR_SDK_H
-#define __LINUX_MSM_CAMSENSOR_SDK_H
+#ifndef __UAPI_LINUX_MSM_CAMSENSOR_SDK_H
+#define __UAPI_LINUX_MSM_CAMSENSOR_SDK_H
+
+#include <linux/videodev2.h>
 
 #define KVERSION 0x1
 
@@ -16,6 +18,7 @@
 #define CSI_DECODE_8BIT         1
 #define CSI_DECODE_10BIT        2
 #define CSI_DECODE_12BIT        3
+#define CSI_DECODE_DPCM_10_6_10 4
 #define CSI_DECODE_DPCM_10_8_10 5
 #define MAX_CID                 16
 #define I2C_SEQ_REG_DATA_MAX    1024
@@ -379,4 +382,5 @@ struct msm_camera_i2c_reg_setting_array {
 	enum msm_camera_i2c_data_type data_type;
 	unsigned short delay;
 };
-#endif /* __LINUX_MSM_CAM_SENSOR_H */
+
+#endif
